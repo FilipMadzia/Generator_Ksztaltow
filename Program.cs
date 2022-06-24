@@ -18,42 +18,15 @@ namespace Kształty
             switch(shape)
             {
                 case "1":
-                    // pobranie wszystkich potrzebnych danych do stworzenia prostokąta
-                    Console.Write("Podaj szerokość prostokąta: ");
-                    string width = Console.ReadLine();
-
-                    Console.Write("Podaj wysokość prostokąta: ");
-                    string height = Console.ReadLine();
-
-                    Console.Write("Podaj wypełnienie prostokąta: ");
-                    string insideRec = Console.ReadLine();
-
-                    // wywołanie funkcji wraz z przekonwertowaniem na int
-                    Rectangle(int.Parse(width), int.Parse(height), insideRec);
+                    Rectangle();
                     break;
                 
                 case "2":
-                    // pobranie wszystkich potrzebnych danych do stworzenia trójkąta
-                    Console.Write("Podaj wysokość trójkąta: ");
-                    string levels = Console.ReadLine();
-
-                    Console.Write("Podaj wypełnienie trójkąta: ");
-                    string insideTri = Console.ReadLine();
-
-                    // konwersja na int przy wywołaniu funkcji tworzącej trójkąt
-                    Triangle(int.Parse(levels), insideTri);
+                    Triangle();
                     break;
 
                 case "3":
-                    // pobranie wszystkich potrzebnych danych do stworzenia rombu
-                    Console.Write("Podaj wysokość rombu: ");
-                    string diamondHeight = Console.ReadLine();
-
-                    Console.Write("Podaj wypełnienie rombu: ");
-                    string insideDiamond = Console.ReadLine();
-
-                    // konwersja na int przy wywołaniu funkcji tworzącej rombu
-                    Diamond(int.Parse(diamondHeight), insideDiamond);
+                    Diamond();
                     break;
                 
                 case "exit":
@@ -66,8 +39,18 @@ namespace Kształty
             }
         }
 
-        static void Rectangle(int width, int height, string inside)
+        static void Rectangle()
         {
+            // pytanie o aspekty prostokąta
+            Console.Write("Podaj szerokość prostokąta: ");
+            int width = int.Parse(Console.ReadLine());
+
+            Console.Write("Podaj wysokość prostokąta: ");
+            int height = int.Parse(Console.ReadLine());
+
+            Console.Write("Podaj wypełnienie prostokąta: ");
+            string inside = Console.ReadLine();
+
             // z wcześniej wpisanych argumentów funkcja generuje prostokąt
             Console.WriteLine("\nTwój prostokąt:\n");
 
@@ -83,8 +66,15 @@ namespace Kształty
             End();
         }
 
-        static void Triangle(int levels, string inside)
+        static void Triangle()
         {
+            // pytanie o aspekty trójkąta
+            Console.Write("Podaj wysokość trójkąta: ");
+            int levels = int.Parse(Console.ReadLine());
+
+            Console.Write("Podaj wypełnienie trójkąta: ");
+            string inside = Console.ReadLine();
+
             // pętla odpowiedzialna za wysokość trójkąta
             for(int i = 0; i < levels; i++)
             {
@@ -105,13 +95,22 @@ namespace Kształty
             End();
         }
 
-        static void Diamond(int levels, string insideR)
+        static void Diamond()
         {
-            string inside = " " + insideR;
+            // pytanie o aspekty rombu
+            Console.Write("Podaj wysokość rombu: ");
+            int height = int.Parse(Console.ReadLine());
+
+            Console.Write("Podaj wypełnienie rombu: ");
+            string inside = " " + Console.ReadLine();
+
+            // zmniejszanie wysokości o połowę, ponieważ generowane są dwa trójkąty o tej samej wysokości więc height = height * 2
+            height = (height / 2) + 1;
+
             // górny trójkąt
-            for(int i = 0; i < levels; i++)
+            for(int i = 0; i < height; i++)
 		    {			
-                for(int j = levels; j > i; j--)
+                for(int j = height; j > i; j--)
                 {
                     Console.Write(" ");
                 }
@@ -125,14 +124,14 @@ namespace Kształty
 		    }
 
             // dolny trójkąt
-            for(int a = 0; a < levels; a++)
+            for(int a = 0; a < height; a++)
 		    {
                 for(int b = 0; b < a; b++)
                 {
                     Console.Write(" ");
                 }
                 
-                for(int c = levels; c > a; c--)
+                for(int c = height; c > a; c--)
                 {
                     Console.Write(inside);
                 }

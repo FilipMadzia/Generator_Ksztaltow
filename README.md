@@ -6,20 +6,29 @@ Lista kształtów możliwych do stworzenia 03.06.2022:
 - prostokąt
 - trójkąt
 
+Lista kształtów możliwych do stworzenia 24.06.2022:
+- prostokąt
+- trójkąt
+- romb
+
 <h1>Dokumentacja</h1>
 
 Home()
-----------
-Funkcja nie przyjmuje żadnych argumentów, wywołanie powoduje wyświetlenie w konsoli listę kształtów i pozwala na wybranie jednego oraz po uzupełnieniu danych wywołuje funkcję wybraną
+---
+Funkcja nie przyjmuje żadnych argumentów, wywołanie powoduje wyświetlenie w konsoli listy kształtów i pozwala na wybranie jednego oraz wywołuje wybraną funkcję.
 
-Rectangle(int width, int height, string inside)
-----------
-Funkcja rysująca prostąkąt z argumentów. Wywołanie wymaga podania szerokości, wysokości oraz wypełnienia. 
+Rectangle()
+---
+Funkcja rysująca prostąkąt. Po wywołaniu pyta o wysokość, szerokość i wypełnienie.
 
-Triangle(int levels, string inside)
----------
-Podobnie jak funkcja Rectangle() wymaga podania wypełnienia a dodatkowo liczbę poziomów (levels). Generuje na ich podstawie trójkąt.
+Triangle()
+---
+Podobnie jak funkcja Rectangle() po wywołaniu pyta o aspekty kształtu w tym przypadku ilość poziomów i wypełnienie.
+
+Diamond()
+---
+Po wywołaniu prosi o podanie wysokości i wypełnienia i tworzy romb.
 
 End()
-----------
+---
 Funkcja wyświetlająca napis końcowy i czekająca na wciśnięcie klawisza. Następnie wywołuje funkcję Home()
