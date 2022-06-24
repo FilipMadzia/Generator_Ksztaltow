@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RvbeGauG3hfe4nMdHUIvgu/c0sB6ITcDUI13ItoKIuSbBT+2H7aUmNEx32wqJuUXDY9Zwjkd6EFUjlM5gf4c7g==",
+  "dgSpecHash": "oNM9eaYB900ekwdfLIhfUtw1kixOMddyQTNwspICBBypzUkjTcLX8BBZR46twNoIxGbkYfXe4myQ+bVkOgG4tw==",
   "success": true,
-  "projectFilePath": "D:\\Programowanie\\C#\\Kształty\\Kształty.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Programowanie\\C#\\Generator_Ksztaltow\\Kształty.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

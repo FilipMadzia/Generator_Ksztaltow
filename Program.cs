@@ -12,7 +12,7 @@ namespace Kształty
 
         static void Home()
         {
-            Console.WriteLine("\nJaki kształt chcesz stworzyć?:\nProstokąt: 1\nTrójkąt: 2");
+            Console.WriteLine("\nJaki kształt chcesz stworzyć?:\nProstokąt: 1\nTrójkąt: 2\nRomb: 3");
 
             string shape = Console.ReadLine();
             switch(shape)
@@ -42,6 +42,18 @@ namespace Kształty
 
                     // konwersja na int przy wywołaniu funkcji tworzącej trójkąt
                     Triangle(int.Parse(levels), insideTri);
+                    break;
+
+                case "3":
+                    // pobranie wszystkich potrzebnych danych do stworzenia rombu
+                    Console.Write("Podaj wysokość rombu: ");
+                    string diamondHeight = Console.ReadLine();
+
+                    Console.Write("Podaj wypełnienie rombu: ");
+                    string insideDiamond = Console.ReadLine();
+
+                    // konwersja na int przy wywołaniu funkcji tworzącej rombu
+                    Diamond(int.Parse(diamondHeight), insideDiamond);
                     break;
                 
                 case "exit":
@@ -90,6 +102,44 @@ namespace Kształty
 
                 Console.WriteLine();
             }
+            End();
+        }
+
+        static void Diamond(int levels, string insideR)
+        {
+            string inside = " " + insideR;
+            // górny trójkąt
+            for(int i = 0; i < levels; i++)
+		    {			
+                for(int j = levels; j > i; j--)
+                {
+                    Console.Write(" ");
+                }
+                
+                for(int k = 0; k < i; k++)
+                {
+                    Console.Write(inside);
+                }
+                
+                Console.WriteLine();
+		    }
+
+            // dolny trójkąt
+            for(int a = 0; a < levels; a++)
+		    {
+                for(int b = 0; b < a; b++)
+                {
+                    Console.Write(" ");
+                }
+                
+                for(int c = levels; c > a; c--)
+                {
+                    Console.Write(inside);
+                }
+                
+                Console.WriteLine();
+		    }
+
             End();
         }
 
